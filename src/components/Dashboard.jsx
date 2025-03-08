@@ -1,5 +1,6 @@
 import { useEffect,useState } from "react"; /**ny useEffect de hoock en react */
 import { useNavigate } from "react-router-dom";
+import Buttonquiz from "./common/ButtonQuiz";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -50,13 +51,17 @@ const Dashboard = () => {
         <h1 className="text-2xl font-bold mb-4">{questions[currentQuestion].question}</h1>
         <div className="grid grid-cols-2 gap-4">
           {questions[currentQuestion].options.map((option, index) => (
-            <button
-              key={index}
-              onClick={() => handleAnswer(option)}
-              className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
-            >
+            <Buttonquiz key={index} onClick={() => handleAnswer(option)}>
               {option}
-            </button>
+            </Buttonquiz>
+            // <button
+            //   key={index}
+            //   onClick={() => handleAnswer(option)}
+            //   className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+            // >
+            //   {option}
+            // </button>
+    
           ))}
         </div>
       </div>
