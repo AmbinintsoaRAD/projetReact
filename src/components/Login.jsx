@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import users from "../data/users.json"; 
+import Button from "./common/Button";
+
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -55,10 +57,12 @@ const Login = () => {
             />
           </div>
           <div className="flex justify-between mt-4">
-            <button type="submit" className="bg-green-500 text-white rounded-full px-6 py-2 w-40">Connecter</button>
-            <button type="reset" className="bg-red-500 text-white rounded-full px-6 py-2 w-40">Annuler</button>
-          </div>
-        </form>
+            <Button variant="connect" type="submit">Connecter</Button>
+            <Button variant="reset" type="reset">Annuler</Button>
+            {/* <button type="submit" className="bg-green-500 text-white rounded-full px-6 py-2 w-40">Connecter</button> */}
+            {/* <button type="reset" className="bg-red-500 text-white rounded-full px-6 py-2 w-40">Annuler</button>*/}
+          </div> 
+        </form> 
       </div>
     </div>
   );
